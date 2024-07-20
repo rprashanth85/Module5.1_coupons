@@ -15,49 +15,49 @@ This data comes to us from the UCI Machine Learning repository and was collected
 
 # Data Investigation 
   
-  1.  Data Describe
-      - checking for Mean, STD, Min and Max Statistics on numerical columns. Helpful to remove columns that are not useful for data modeling.
-  2.  isNull Check
-      -  More null rows/coulmns cannot be useful for training a model. Those rows or columns can be removed.
-  3.  Data Duplication
-      - To see if duplication is genuine.
-  4.  Data Merge,
-      -  To see if we can merge columns or values in columns.
-  5.  Heat Map,
-      -  To see correlation and relationship between variable. Helpful to avoid high redundancy. Also gives high and low correlation between variable.
+  1.  Data Description:
+      - Checking for mean, standard deviation, minimum, and maximum statistics on numerical columns to identify useful columns for data modeling.
+  2.  isNull Check:
+      -  Removing rows or columns with excessive null values as they are not useful for training a model.
+  3.  Data Duplication:
+      - Identifying genuine duplicates.
+  4.  Data Merge:
+      -  Exploring possibilities to merge columns or values within columns.
+  5.  Heat Map:
+      -  Analyzing correlations and relationships between variables to avoid redundancy and highlight significant correlations.
     
 
 # Actions on Data Investigation
 
-  1.  Column Drop
-      - 'car' : This column has more than 95% of the data as null. This will not provide any useful data for the model.
-      - 'direction_opp' : This is inverse of 'direct_same' column. Also these 2 columns are like boolean value. Meaning, value 1 in 'direction_opp' would be 0 in 'direction_same'. Checked there are no NaN or Null values.
-  2.  Replacing / Merging Column Values
-       - After dropping 'direction_opp' column. Replaced 1 with value "Same" and 0 with value "Opposite".
-       - In any column value "never" and "less 1" are same. Merged them with a common value.
-       - For Age: replaced "below21" value as 20 and "50plus" as 50.
-  3.  Object to Numeric
-      - Converted Age to Numeric field.
-      - Faster to filter performance.
+  1.  Column Drop:
+      - 'car': Contains over 95% null values, hence not useful for the model.
+      - 'direction_opp': Inverse of 'direction_same' column. These columns are boolean like; thus, one can be removed.
+  2.  Replacing / Merging Column Values:
+       - After dropping 'direction_opp', replaced 1 with “Same” and 0 with “Opposite”.
+       - Merged “never” and “less1” values in any column value.
+       - Replaced “below21” with 20 and “50plus” with 50 for 'age'.
+  3.  Object to Numeric Conversion:
+      - Converted age to a numeric field for faster filtering performance.
     
 
 # Data Visualization
 
-  1.  Libraries used for analysis, investigation and Visualization
-      - Plotly, Seaborn and Matplotlib, Pandas, IPython display.
+  1.  Libraries Used:
+      - Plotly, Seaborn, Matplotlib, Pandas, IPython display.
   3.  Plots used for analysis.
       -  Subplots, Bar, Histogram and Pie Plots to compare drivers.
-  3.  Used display image function in places where Plotly visualizations are used.
+  3.  Display:
+      -	Used display image function where Plotly visualizations were employed.
 
 
 # Bar Chart Analysis and Hypothesis
 
-  1.  Out of 12684 rows only 2017 rows had Bar Coupons. This is around 15% percent of the total data set.
-  2.  On that 15% only 41% accepted the coupon.
-  3.  Drivers who go to bar 3 or less times has accepted the coupon more than those went to bar more than 3 times in a month. The diffrence is around 100 drivers between the two category.
-  4.  There is no much difference in coupon acceptance rate between the drivers who go to bar more than once a month and over the age of 25 to all others. Acceptance rates are 0.695 and 0.670 respectively.
-  5.  And there is a mediocre difference between the acceptance rate of drivers who go to bar more than once and has no passanger as kids and also does occupation other than Farming, fishing or Forestry to all others. Acceptance rates are 0.713 and 0.377
-  6.  Also there is no significant acceptance rate difference between drivers who (go to bar more than once a month and passangera not kids and not Widowed) OR (go to bar more than once in a month and age under 30 ) OR (go to cheap restaurant more than 4 times a month and income less than 50K ) to all others. Acceptance rates are 0.605 and 0.543
+  1.  Out of 12684 rows, only 2017 rows had bar coupons, around 15% of the total dataset.
+  2.  Fn that 15% only 41% accepted the coupon.
+  3.  Drivers visiting bars 3 or fewer times a month accepted the coupon more than those visiting more than 3 times, with a difference of around 100 drivers.
+  4.  Little difference in coupon acceptance rate between drivers who frequent bars more than once a month and those over 25 years old (0.695 vs. 0.670 acceptance rates).
+  5.  Moderate difference in acceptance rate between drivers who frequent bars more than once and have no child passengers and those not in farming, fishing, or forestry occupations (0.713 vs. 0.377 acceptance rates).
+  6.  No significant acceptance rate difference between drivers who (go to bar more than once a month and passangera not kids and not Widowed) OR (go to bar more than once in a month and age under 30 ) OR (go to cheap restaurant more than 4 times a month and income less than 50K ) to all others. Acceptance rates are 0.605 and 0.543
   7.  The analysis reveals that certain demographic and behavioral factors influence the acceptance of bar coupons, but the differences are not always substantial. Therefore, a nuanced marketing strategy that considers a combination of factors, such as age, social activity, family responsibilities, and occupation, might be more effective in increasing the acceptance rates of bar coupons. Further detailed analysis and segmentation could help in identifying more specific target groups and tailoring marketing efforts accordingly.
 
 
